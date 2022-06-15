@@ -24,3 +24,71 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.g-font-light {
+    font-family: 'tajawal-light' !important;
+}
+
+.g-font-reg {
+    font-family: 'tajawal-reg' !important;
+}
+
+.g-font-medium {
+    font-family: 'tajawal-medium' !important;
+}
+
+.g-font-bold {
+    font-family: 'tajawal-bold' !important;
+}
+
+.g-font-lg {
+    font-size: 1em;
+    font-weight: 800;
+}
+
+.g-bold {
+    font-weight: 600;
+}
+
+.g-bolder {
+    font-weight: 900;
+}
+
+.g-default-font-medium {
+    --ion-font-family: 'tajawal-medium', sans-serif !important;
+    --ion-default-font: 'tajawal-medium', sans-serif !important;
+    font-family: 'tajawal-medium', sans-serif !important;
+    letter-spacing: -1px !important;
+}
+
+.g-selectable {
+    cursor: pointer;
+}
+
+.g-expandable:hover {
+    transition: all .2s;
+    transform: scale(1.045);
+}
+
+.g-golden-gradient-bg {
+    background: rgb(247, 222, 124) !important;
+    background: -moz-linear-gradient(left, rgba(247, 222, 124, 1) 1%, rgba(178, 127, 43, 1) 53%, rgba(178, 127, 43, 1) 59%, rgba(178, 127, 43, 1) 66%, rgba(178, 127, 43, 1) 66%, rgba(247, 222, 124, 1) 100%) !important;
+    background: -webkit-linear-gradient(left, rgba(247, 222, 124, 1) 1%, rgba(178, 127, 43, 1) 53%, rgba(178, 127, 43, 1) 59%, rgba(178, 127, 43, 1) 66%, rgba(178, 127, 43, 1) 66%, rgba(247, 222, 124, 1) 100%) !important;
+    background: linear-gradient(to right, rgba(247, 222, 124, 1) 1%, rgba(178, 127, 43, 1) 53%, rgba(178, 127, 43, 1) 59%, rgba(178, 127, 43, 1) 66%, rgba(178, 127, 43, 1) 66%, rgba(247, 222, 124, 1) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7de7c', endColorstr='#f7de7c', GradientType=1) !important;
+}
+
+.g-full-height {
+    height: 100% !important;
+}
+
+.g-margin-auto-lr {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.g-formErrorLabel {
+    color: var(--ion-color-danger) !important;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+}
