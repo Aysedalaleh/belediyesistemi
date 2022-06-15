@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <main-nav #nav></main-nav>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" #content>
+  <ion-header collapse="condense">
+    <ion-toolbar class="ion-no-padding" style="padding: 0 !important;">
+      <navbar></navbar>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <ion-row>
+          <ion-col size="4" *ngFor="let news of newsList;let i = index">
+            <ion-card class="g-full-height g-selectable g-expandable" (click)="showDetails(news)">
+              <lazy-image class="newsImg" [img]="news?.img" [alt]="news?.title"></lazy-image>
+              <ion-item mode="ios" class="ion-no-padding" lines="none" detail>
+                <ion-card-header class="g-full-width">
+                  <ion-card-title>
+                    <ion-row class="g-full-width">
+                      <ion-col>
+                        <ion-label color="primary" class="ion-text-wrap newsTitle-label">{{news?.title}}</ion-label>
+                      </ion-col>
+                    </ion-row>
+                  </ion-card-title>
+                </ion-card-header>
+              </ion-item>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

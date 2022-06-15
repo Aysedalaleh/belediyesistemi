@@ -1,0 +1,107 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-toolbar>
+      <main-nav #nav></main-nav>
+    </ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-header collapse="condense">
+    <ion-toolbar class="ion-no-padding" style="padding: 0 !important;">
+      <navbar></navbar>
+    </ion-toolbar>
+  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <!-- sliders -->
+        <ion-row style="margin-bottom: 5%;">
+          <ion-col>
+            <ion-slides class="slider" *ngIf="slides; else skeleton" [options]="sliderOpts" pager="true">
+              <ion-slide *ngFor="let slide of slides">
+                <img style="border-radius: 5px;width:100%;margin-top: auto;margin-bottom: auto;" [src]="slide.img" alt="" />
+              </ion-slide>
+            </ion-slides>
+            <ng-template #skeleton>
+              <ion-slides class="slider">
+                <ion-slide>
+                  <ion-skeleton-text class="slider-skeleton" animated></ion-skeleton-text>
+                </ion-slide>
+              </ion-slides>
+            </ng-template>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-text-center">
+            <ion-card class="g-content-card ion-no-margin" style="box-shadow: none;">
+              <ion-row class="ion-text-center">
+                <ion-col>
+                  <ion-icon style="font-size: 10rem;" color="red" src="assets/icon/svg/architecture-and-city.svg"></ion-icon>
+                </ion-col>
+              </ion-row>
+              <ion-row class="ion-text-center">
+                <ion-col>
+                  <ion-label class="g-bolder" color="primary">{{'our_vision' | translate}}</ion-label>
+                </ion-col>
+              </ion-row>
+              <ion-row class="ion-text-center">
+                <ion-col>
+                  <ion-label class="g-bold">{{'our_vision_1' | translate}}</ion-label>
+                </ion-col>
+              </ion-row>
+              <ion-row class="ion-text-center">
+                <ion-col>
+                  <ion-label class="g-bold">{{'our_vision_2' | translate}}</ion-label>
+                </ion-col>
+              </ion-row>
+              <ion-row class="ion-text-center">
+                <ion-col>
+                  <ion-label class="g-bold">{{'our_vision_3' | translate}}</ion-label>
+                </ion-col>
+              </ion-row>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-card class="g-content-card ion-no-margin" style="background: #ff020217;">
+              <ion-row class="ion-text-center">
+                <ion-col>
+                  <ion-icon class="bigLogo" color="red" src="assets/icon/svg/economic.svg"></ion-icon>
+                </ion-col>
+              </ion-row>
+              <ion-row class="ion-text-center">
+                <ion-col>
+                  <ion-label class="g-font-bold" color="primary">{{'main_economic_domains' | translate}}</ion-label>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col size="4" *ngFor="let domain of economic_domains">
+                        <ion-card class="g-content-card ion-no-margin g-full-height">
+                          <ion-row class="ion-text-center">
+                            <ion-col>
+                              <ion-icon color="primary" class="bigLogo" src="assets/icon/svg/{{domain.icon}}"></ion-icon>
+                            </ion-col>
+                          </ion-row>
+                          <ion-row class="ion-text-center">
+                            <ion-col>
+                              <ion-label class="g-bold">{{domain.name | translate}}</ion-label>
+                            </ion-col>
+                          </ion-row>
+                        </ion-card>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-col>
+              </ion-row>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

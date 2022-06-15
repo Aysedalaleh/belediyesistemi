@@ -1,0 +1,223 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <main-nav #nav></main-nav>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen="true" #content>
+  <ion-header collapse="condense">
+    <ion-toolbar class="ion-no-padding" style="padding: 0 !important;">
+      <navbar></navbar>
+    </ion-toolbar>
+  </ion-header>
+  <ion-img class="headerImg g-margin-auto-lr" src="assets/img/png/contactUs.png"></ion-img>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <ion-grid style="margin-top: 30px;">
+          <ion-row>
+            <ion-col size="3" offset="3">
+              <ion-row style="margin-top: 30px;">
+                <ion-col>
+                  <ion-label color="primary" class="g-bolder" style="text-decoration: underline;font-size: 1.5rem;">{{'email' | translate}}:</ion-label>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-label color="dark"><a href="mailto:info.eu@baladnashop.com" style="color: var(--ion-color-dark);text-decoration: none;">info@ebelediye.tr</a></ion-label>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col>
+              <ion-row style="margin-top: 30px;">
+                <ion-col>
+                  <ion-label color="primary" class="g-bolder" style="text-decoration: underline;font-size: 1.5rem;">{{'social_media' | translate}}:</ion-label>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-row>
+                    <ion-col size="1">
+                      <ion-button fill="clear" style="--padding-start:0 !important;--padding-end:0 !important" (click)="globalsService.openExternalLink('')">
+                        <ion-icon color="primary" slot="icon-only" style="font-size: 2.5rem;" name="logo-whatsapp"></ion-icon>
+                      </ion-button>
+                    </ion-col>
+                    <ion-col size="1">
+                      <ion-button fill="clear" style="--padding-start:0 !important;--padding-end:0 !important" (click)="globalsService.openExternalLink('')">
+                        <ion-icon color="primary" slot="icon-only" style="font-size: 2.5rem;" name="logo-facebook"></ion-icon>
+                      </ion-button>
+                    </ion-col>
+                    <ion-col size="1">
+                      <ion-button fill="clear" style="--padding-start:0 !important;--padding-end:0 !important" (click)="globalsService.openExternalLink('')">
+                        <ion-icon color="primary" slot="icon-only" style="font-size: 2.5rem;" name="logo-instagram"></ion-icon>
+                      </ion-button>
+                    </ion-col>
+                    <ion-col size="1">
+                      <ion-button fill="clear" style="--padding-start:0 !important;--padding-end:0 !important" (click)="globalsService.openExternalLink('')">
+                        <ion-icon color="primary" slot="icon-only" style="font-size: 2.5rem;" name="logo-youtube"></ion-icon>
+                      </ion-button>
+                    </ion-col>
+                    <ion-col size="1">
+                      <ion-button fill="clear" style="--padding-start:0 !important;--padding-end:0 !important" (click)="globalsService.openExternalLink('')">
+                        <ion-icon color="primary" slot="icon-only" style="font-size: 2.5rem;" name="logo-twitter"></ion-icon>
+                      </ion-button>
+                    </ion-col>
+                    <ion-col size="1">
+                      <ion-button fill="clear" style="--padding-start:0 !important;--padding-end:0 !important" (click)="globalsService.openExternalLink('')">
+                        <ion-icon color="primary" slot="icon-only" style="font-size: 2.5rem;" name="logo-linkedin"></ion-icon>
+                      </ion-button>
+                    </ion-col>
+                    <ion-col size="1">
+                      <ion-button fill="clear" style="--padding-start:0 !important;--padding-end:0 !important" (click)="globalsService.openExternalLink('')">
+                        <ion-icon color="primary" slot="icon-only" style="font-size: 2.5rem;" name="logo-pinterest"></ion-icon>
+                      </ion-button>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <hr class="g-golden-gradient-bg ion-margin" style="height: 1px;border-radius: 25%;">
+        <ion-grid style="margin-top: 30px;">
+          <ion-row>
+            <ion-col class="ion-text-center">
+              <ion-row>
+                <ion-col class="ion-text-center">
+                  <ion-label class="g-bolder" style="font-size: 2rem;" color="primary">{{'send_us_msg' | translate}}</ion-label>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <form *ngIf="globalsService.isLoggedIn == true" [formGroup]="form">
+                    <ion-row>
+                      <ion-col size="8" offset="2">
+                        <ion-list class="g-input-list" lines="full" style="border: 1px solid var(--ion-color-medium);border-radius: 10px;padding: 20px;">
+                          <!-- firstname -->
+                          <ion-item style="--padding-start: 0">
+                            <ion-label position="floating" color="primary">{{ 'firstname' | translate }}</ion-label>
+                            <ion-input class="g-bold g-forbidden" value="{{this.globalsService.firstName}}" readOnly></ion-input>
+                          </ion-item>
+                          <ion-row>
+                            <ion-col>
+                              <ion-label class="g-formErrorLabel" *ngIf="form.controls.firstname.errors?.required && (form.controls.firstname.dirty || form.controls.firstname.touched)">* {{'error_firstname_required' | translate}}</ion-label>
+                            </ion-col>
+                          </ion-row>
+                          <!-- lastname -->
+                          <ion-item style="--padding-start: 0">
+                            <ion-label position="floating" color="primary">{{ 'lastname' | translate }}</ion-label>
+                            <ion-input class="g-bold g-forbidden" value="{{this.globalsService.lastName}}" readOnly></ion-input>
+                          </ion-item>
+                          <ion-row>
+                            <ion-col>
+                              <ion-label class="g-formErrorLabel" *ngIf="form.controls.lastname.errors?.required && (form.controls.lastname.dirty || form.controls.lastname.touched)">* {{'error_lastname_required' | translate}}</ion-label>
+                            </ion-col>
+                          </ion-row>
+                          <!-- email -->
+                          <ion-item style="--padding-start: 0">
+                            <ion-label position="stacked" color="primary">{{ 'email' | translate }}</ion-label>
+                            <ion-input class="g-bold g-forbidden" value="{{this.globalsService.email}}" readOnly></ion-input>
+                          </ion-item>
+                          <!-- phone -->
+                          <ion-item dir="{{'' | dir}}" class="phoneItem" style="--padding-start: 0">
+                            <ion-label position="stacked" color="primary">{{ 'phone' | translate }}</ion-label>
+                            <ion-input class="g-bold g-forbidden" value="{{this.globalsService.phone}}" readOnly></ion-input>
+                          </ion-item>
+                          <!-- message -->
+                          <ion-item style="--padding-start: 0">
+                            <ion-label position="stacked" color="primary">{{ 'your_message' | translate }} ({{charCount}}/{{maxCharCount}})</ion-label>
+                            <ion-textarea formControlName="message" class="g-bold" rows="6" (ionInput)="clacChars($event)"></ion-textarea>
+                          </ion-item>
+                          <ion-row>
+                            <ion-col class="ion-text-start">
+                              <ion-label class="g-formErrorLabel" *ngIf="form.controls.message.errors?.required && (form.controls.message.dirty || form.controls.message.touched)">* {{'error_message_required' | translate}}</ion-label>
+                              <ion-label class="g-formErrorLabel" *ngIf="form.controls.message.errors?.maxlength && (form.controls.message.dirty || form.controls.message.touched)">* {{'error_message_maxlength' | translate:param}}</ion-label>
+                            </ion-col>
+                          </ion-row>
+                          <ion-row class="ion-margin-vertical">
+                            <ion-col size="6" offset="3">
+                              <ion-button expand="block" (click)="send()">
+                                {{'send'| translate}}
+                              </ion-button>
+                            </ion-col>
+                          </ion-row>
+                        </ion-list>
+                      </ion-col>
+                    </ion-row>
+                  </form>
+                  <form *ngIf="globalsService.isLoggedIn == false" [formGroup]="form">
+                    <ion-row>
+                      <ion-col size="8" offset="2">
+                        <ion-list class="g-input-list" lines="full" style="border: 1px solid var(--ion-color-medium);border-radius: 10px;padding: 20px;">
+                          <!-- firstname -->
+                          <ion-item style="--padding-start: 0">
+                            <ion-label position="floating" color="primary">{{ 'firstname' | translate }}</ion-label>
+                            <ion-input class="g-bold" formControlName="firstname"></ion-input>
+                          </ion-item>
+                          <ion-row>
+                            <ion-col class="ion-text-start">
+                              <ion-label class="g-formErrorLabel" *ngIf="form.controls.firstname.errors?.required && (form.controls.firstname.dirty || form.controls.firstname.touched)">* {{'error_firstname_required' | translate}}</ion-label>
+                            </ion-col>
+                          </ion-row>
+                          <!-- lastname -->
+                          <ion-item style="--padding-start: 0">
+                            <ion-label position="floating" color="primary">{{ 'lastname' | translate }}</ion-label>
+                            <ion-input class="g-bold" formControlName="lastname"></ion-input>
+                          </ion-item>
+                          <ion-row>
+                            <ion-col class="ion-text-start">
+                              <ion-label class="g-formErrorLabel" *ngIf="form.controls.lastname.errors?.required && (form.controls.lastname.dirty || form.controls.lastname.touched)">* {{'error_lastname_required' | translate}}</ion-label>
+                            </ion-col>
+                          </ion-row>
+                          <!-- email -->
+                          <ion-item style="--padding-start: 0">
+                            <ion-label position="floating" color="primary">{{ 'email' | translate }}</ion-label>
+                            <ion-input class="g-bold" formControlName="email"></ion-input>
+                          </ion-item>
+                          <ion-row>
+                            <ion-col class="ion-text-start">
+                              <ion-label class="g-formErrorLabel" *ngIf="form.controls.email.errors?.required && (form.controls.email.dirty || form.controls.email.touched)">* {{'error_email_required' | translate}}</ion-label>
+                              <ion-label class="g-formErrorLabel" *ngIf="form.controls.email.errors?.pattern && (form.controls.email.dirty || form.controls.email.touched)">* {{'error_enter_valid_email' | translate}}</ion-label>
+                            </ion-col>
+                          </ion-row>
+                          <!-- phone -->
+                          <ion-item dir="{{'' | dir}}" class="phoneItem" style="--padding-start: 0">
+                            <ion-label position="floating" color="primary">{{ 'phone' | translate }}</ion-label>
+                            <ion-input class="g-bold" formControlName="telephone"></ion-input>
+                          </ion-item>
+                          <ion-row>
+                            <ion-col class="ion-text-start">
+                              <ion-label class="g-formErrorLabel" *ngIf="form.controls.telephone.errors?.required && (form.controls.telephone.dirty || form.controls.telephone.touched)">* {{'error_phone_required' | translate}}</ion-label>
+                              <ion-label class="g-formErrorLabel" *ngIf="form.controls.telephone.errors?.pattern && (form.controls.telephone.dirty || form.controls.telephone.touched)">* {{'error_enter_valid_phone' | translate}}</ion-label>
+                            </ion-col>
+                          </ion-row>
+                          <!-- message -->
+                          <ion-item style="--padding-start: 0">
+                            <ion-label position="floating" color="primary">{{ 'your_message' | translate }} ({{charCount}}/{{maxCharCount}})</ion-label>
+                            <ion-textarea formControlName="message" class="g-bold" rows="6" (ionInput)="clacChars($event)"></ion-textarea>
+                          </ion-item>
+                          <ion-row>
+                            <ion-col class="ion-text-start">
+                              <ion-label class="g-formErrorLabel" *ngIf="form.controls.message.errors?.required && (form.controls.message.dirty || form.controls.message.touched)">* {{'error_message_required' | translate}}</ion-label>
+                              <ion-label class="g-formErrorLabel" *ngIf="form.controls.message.errors?.maxlength && (form.controls.message.dirty || form.controls.message.touched)">* {{'error_message_maxlength' | translate:param}}</ion-label>
+                            </ion-col>
+                          </ion-row>
+                          <ion-row class="ion-margin-vertical">
+                            <ion-col size="6" offset="3">
+                              <ion-button expand="block" (click)="send()">
+                                {{'send'| translate}}
+                              </ion-button>
+                            </ion-col>
+                          </ion-row>
+                        </ion-list>
+                      </ion-col>
+                    </ion-row>
+                  </form>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

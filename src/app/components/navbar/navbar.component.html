@@ -1,0 +1,29 @@
+<!-- <ion-header style="background: #fff;"> -->
+<ion-grid>
+  <ion-row style="height: 100%;">
+    <ion-col class="ion-text-center g-margin-auto">
+      <ion-button fill="clear" color="primary" class="g-bolder" (click)="goToPage('home')">
+        {{'home' | translate}}
+        <hr *ngIf="globalsService.currentPage == 'home'" style="height: 3px;position: absolute;bottom: -2px;width: 110%;border-radius: 25%;background: var(--ion-color-secondary);">
+      </ion-button>
+      <ion-button fill="clear" color="primary" class="g-bolder" (click)="goToPage('news')">
+        {{'latest_news' | translate}}
+        <hr *ngIf="globalsService.currentPage == 'news'" style="height: 3px;position: absolute;bottom: -2px;width: 110%;border-radius: 25%;background: var(--ion-color-secondary);">
+      </ion-button>
+      <ion-button fill="clear" color="primary" class="g-bolder" (click)="goToPage('send-complaint')">
+        {{'send_complaint' | translate}}
+        <hr *ngIf="globalsService.currentPage == 'contact-us'" style="height: 3px;position: absolute;bottom: -2px;width: 110%;border-radius: 25%;background: var(--ion-color-secondary);">
+      </ion-button>
+      <ion-button fill="clear" color="primary" class="g-bolder" (click)="goToPage('contact-us')">
+        {{'contact_us' | translate}}
+        <hr *ngIf="globalsService.currentPage == 'contact-us'" style="height: 3px;position: absolute;bottom: -2px;width: 110%;border-radius: 25%;background: var(--ion-color-secondary);">
+      </ion-button>
+      <ion-button fill="clear" color="primary" class="g-bolder" (click)="goToPage('about-us')">
+        {{'about_us' | translate}}
+        <hr *ngIf="globalsService.currentPage == 'about-us'" style="height: 3px;position: absolute;bottom: -2px;width: 110%;border-radius: 25%;background: var(--ion-color-secondary);">
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<hr class="g-golden-gradient-bg" style="height: 5px;margin-top: 0;margin-bottom: 0;">
+<!-- </ion-header> -->
